@@ -5,8 +5,9 @@ setwd(DIR[["plan"]])
 # Normally declared by your strategy.
 # Long-only MACD is computed with rollapply()
 # here for sake of example.
-n1 <- 5
-n2 <- 34
+maxo<-nrow(DATA[["Close"]])
+n1 <- min(5,maxo)
+n2 <- min(34,maxo)
 nSharpe <- 20
 shThresh <- 0.50
 
@@ -39,7 +40,7 @@ entryfunc <- function(v, shThresh){
 cols <- ncol(INDIC)
 
 ENTRY <- rollapply(cbind(INDIC, FAVOR),
-                      function(v) entryfunc(v, cols),
+                      function(v) entryfunc(v, shThresh),
                       by.column = FALSE, 
                       width = 2,
                       align = "right")

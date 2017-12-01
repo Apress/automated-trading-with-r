@@ -1,11 +1,11 @@
 DIR <- list()
-DIR[["root"]] <- "~/Platform/"
-DIR[["data"]] <- "~/Platform/stockdata/"
-DIR[["function"]] <- "~/Platform/functions/"
-DIR[["load"]] <- "~/Platform/load/"
-DIR[["compute"]] <- "~/Platform/compute/"
-DIR[["plan"]] <- "~/Platform/plan/"
-DIR[["model"]] <- "~/Platform/model/"
+DIR[["root"]] <- "~/Documents/automated-trading-with-r-master/Platform"
+DIR[["data"]] <- "~/Documents/automated-trading-with-r-master/Platform/stockdata/"
+DIR[["function"]] <- "~/Documents/automated-trading-with-r-master/Platform/functions/"
+DIR[["load"]] <- "~/Documents/automated-trading-with-r-master/Platform/load/"
+DIR[["compute"]] <- "~/Documents/automated-trading-with-r-master/Platform/compute/"
+DIR[["plan"]] <- "~/Documents/automated-trading-with-r-master/Platform/plan/"
+DIR[["model"]] <- "~/Documents/automated-trading-with-r-master/Platform/model/"
 
 CONFIG <- list()
 

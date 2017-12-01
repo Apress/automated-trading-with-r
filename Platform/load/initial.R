@@ -22,7 +22,7 @@ if(length(toload) != 0){
     
   df <- yahoo(toload[i])
   
-  if(!is.null(df)) {
+  if(!is.null(df)&&!"V1" %in% colnames(df)) {
     write.csv(df[nrow(df):1], file = paste0(toload[i], ".csv"),
               row.names = FALSE) 
   } else {

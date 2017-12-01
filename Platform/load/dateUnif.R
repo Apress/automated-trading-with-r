@@ -11,6 +11,7 @@ DATA[["Open"]] <- DATA[["High"]] <- DATA[["Low"]] <-
   DATA[["Close"]] <- DATA[["Adj Close"]] <- DATA[["Volume"]] <- datetemp
 
 for(s in S){ 
+  if (s != "invalid.R"){
   for(i in rev(c("Open", "High", "Low", "Close", "Adj Close", "Volume"))){
     temp <- data.frame(cbind(DATA[[s]][["Date"]], DATA[[s]][[i]]),
                        stringsAsFactors = FALSE)
@@ -34,7 +35,7 @@ for(s in S){
   if( which( S == s ) %% 25 == 0 ){
     cat( paste0(round(100 * which( S == s ) / length(S), 1), "% Complete\n") )
   }
-  
+  }
 }
 
 DATA <- lapply(DATA, function(v) zoo(v[,2:ncol(v)], strptime(v[,1], "%Y-%m-%d")))
