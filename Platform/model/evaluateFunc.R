@@ -51,12 +51,19 @@ evaluate <- function(PARAM, minVal = NA, maxVal = NA, y = 2014,
   CLOSE <- DATA[["Close"]][period,]
   OPEN <- DATA[["Open"]][period,]
   SUBRETURN <- RETURN[period,]
-   
+  ASV<-as.vector(CLOSE)
+  pol<-ncol(CLOSE)
+  plol<-length(ASV)
+  if(length(ASV)==0L||ncol(CLOSE)==0){
+    return(0)
+  } 
   
   # Compute inputs for long-only MACD as in Listing 7.2
   # Code is optimized for speed using functions from caTools and zoo
   require(caTools)
   
+  n1bis<-max(n1,ncol(CLOSE))
+  n2bis<-max(n2,ncol(CLOSE))
   INDIC <- zoo(runmean(CLOSE, n1, endrule = "NA", align = "right") -
                  runmean(CLOSE, n2, endrule = "NA", align = "right"),
                order.by = index(CLOSE))

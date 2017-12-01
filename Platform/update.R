@@ -1,4 +1,4 @@
-source("~/Platform/config.R")
+source("~/Documents/automated-trading-with-r-master/Platform/config.R")
 
 setwd(DIR[["load"]])
 cat("initial.R\n\n")
